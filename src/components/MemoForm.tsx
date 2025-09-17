@@ -91,18 +91,22 @@ export const MemoForm = ({ onMemoSubmit }: MemoFormProps) => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader className="space-y-1">
-        <div className="flex items-center space-x-2">
-          <FileText className="h-5 w-5 text-primary-foreground" />
-          <CardTitle className="text-xl">Create New Memo</CardTitle>
+    <Card className="w-full max-w-4xl mx-auto professional-card">
+      <CardHeader className="space-y-4 pb-6">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+            <FileText className="h-5 w-5 text-white" />
+          </div>
+          <div>
+            <CardTitle className="text-2xl font-semibold">Create New Memo</CardTitle>
+            <CardDescription className="text-base mt-1">
+              Fill in the memo details below. All fields marked with * are required.
+            </CardDescription>
+          </div>
         </div>
-        <CardDescription>
-          Fill in the memo details below. All fields marked with * are required.
-        </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <CardContent className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="subject">Subject *</Label>
@@ -174,9 +178,9 @@ export const MemoForm = ({ onMemoSubmit }: MemoFormProps) => {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 pt-4">
-            <Button type="submit" className="flex-1">
-              <FileText className="mr-2 h-4 w-4" />
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-border/50">
+            <Button type="submit" className="flex-1 h-12 text-base gradient-primary hover:opacity-90 transition-opacity">
+              <FileText className="mr-2 h-5 w-5" />
               Create Memo
             </Button>
             
@@ -187,8 +191,8 @@ export const MemoForm = ({ onMemoSubmit }: MemoFormProps) => {
                 onChange={handleCSVImport}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              <Button type="button" variant="outline" className="w-full sm:w-auto">
-                <Upload className="mr-2 h-4 w-4" />
+              <Button type="button" variant="outline" className="w-full sm:w-auto h-12 text-base border-2 hover:border-primary/50 transition-colors">
+                <Upload className="mr-2 h-5 w-5" />
                 Import CSV
               </Button>
             </div>

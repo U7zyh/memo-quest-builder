@@ -171,17 +171,21 @@ export const ReportGenerator = ({ memos }: ReportGeneratorProps) => {
   };
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <div className="flex items-center space-x-2">
-          <BarChart3 className="h-5 w-5 text-primary-foreground" />
-          <CardTitle>Generate Report</CardTitle>
+    <Card className="w-full professional-card">
+      <CardHeader className="pb-6">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+            <BarChart3 className="h-5 w-5 text-white" />
+          </div>
+          <div>
+            <CardTitle className="text-2xl font-semibold">Generate Report</CardTitle>
+            <CardDescription className="text-base mt-1">
+              Create and download reports in HTML or CSV format
+            </CardDescription>
+          </div>
         </div>
-        <CardDescription>
-          Create and download reports in HTML or CSV format
-        </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="dateFrom">From Date</Label>
@@ -246,20 +250,32 @@ export const ReportGenerator = ({ memos }: ReportGeneratorProps) => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 pt-4">
-          <Button onClick={generateReport} className="flex-1">
-            <FileDown className="mr-2 h-4 w-4" />
+        <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-border/50">
+          <Button onClick={generateReport} className="flex-1 h-12 text-base gradient-primary hover:opacity-90 transition-opacity">
+            <FileDown className="mr-2 h-5 w-5" />
             Generate & Download Report
           </Button>
         </div>
 
-        <div className="text-sm text-muted-foreground bg-muted p-3 rounded-lg">
-          <p><strong>Report will include:</strong></p>
-          <ul className="mt-1 space-y-1">
-            <li>• Summary statistics</li>
-            <li>• Filtered memo details</li>
-            <li>• Professional formatting</li>
-            <li>• Print-friendly layout (HTML)</li>
+        <div className="text-sm bg-gradient-to-r from-muted/30 to-muted/50 p-4 rounded-lg border-l-4 border-primary">
+          <p className="font-semibold text-foreground mb-2">Report will include:</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              Summary statistics
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              Filtered memo details
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              Professional formatting
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              Print-friendly layout (HTML)
+            </li>
           </ul>
         </div>
       </CardContent>
